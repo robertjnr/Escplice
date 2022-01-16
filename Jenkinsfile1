@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools {
+        maven "Maven3"
+    }
+    stages {
+        stage('Build') { 
+            steps {
+                echo"hello world"
+                // 
+            }
+        }
+        stage('Test') { 
+            steps {
+             echo "Test"
+                // 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+            echo "Deploy"
+                // 
+            }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+    }
+    
+}
