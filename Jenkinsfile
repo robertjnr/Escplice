@@ -2,7 +2,9 @@ pipeline{
   agent any
   stages{
     stage("Build"){
-      bat "Hello World"
+      step{
+        bat "Hello World"
     }
   }
+}
 }
