@@ -1,0 +1,30 @@
+pipeline{
+    agent none
+    stages{
+        stage('GitClone'){
+            agent any
+            steps{
+            git credentialsId: '7d699c91-b7c9-4c26-9a72-fc309cc12738', url: 'https://github.com/amitvermaa93/jenkins-git-integration.git'
+          }
+        }
+        stage('MavenComplile'){
+            agent any
+            steps{
+                sh 'mvn compile'
+            }
+        }
+        stage('MavenTest'){
+            agent any
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage('MavenPackage'){
+            agent any
+            steps{
+              git credentialsId: '7d699c91-b7c9-4c26-9a72-fc309cc12738', url: 'https://github.com/amitvermaa93/jenkins-git-integration.git'
+                sh 'mvn package'
+            }
+        }
+    }
+}
