@@ -5,9 +5,9 @@ pipeline {
         name = 'gaurav'
     }
     parameters {
-        string(name: 'person', defaultValue: 'Saurav Sharma', description: "Who are you?")
+        string(name: 'person', defaultValue: 'Sriram', description: "Who are you?")
         booleanParam(name: 'isMale', defaultValue: true, description: "")
-        choice(name: 'City', choices: ['Jaipur','Mumbai','Pune' ], description: "")
+        choice(name: 'City', choices: ['Hyderabad','bbsr'], description: "")
     }
     stages {
         stage('Run A command') {
@@ -16,7 +16,7 @@ pipeline {
                 ls
                 date
                 pwd
-                cal 2021
+                cal 2022
                 '''
                 
             }
