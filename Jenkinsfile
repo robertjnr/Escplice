@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Run A command') {
             steps {
-                sh '''
+                bat '''
                 ls
                 date
                 pwd
@@ -26,16 +26,16 @@ pipeline {
                 username = 'myusername'
             }
             steps {
-                sh 'echo  "${BUILD_ID}"'
-                sh 'echo  "${name}"'
-                sh 'echo  "${username}"'
+                bat 'echo  "${BUILD_ID}"'
+                bat 'echo  "${name}"'
+                bat 'echo  "${username}"'
             }
         }
         stage('Parameters') {
             steps {
                 echo 'deploy on test'
-                sh 'echo "${name}"'
-                sh 'echo  "${person}"'
+                bat 'echo "${name}"'
+                bat 'echo  "${person}"'
             }
         }
         stage('Continue ?') {
