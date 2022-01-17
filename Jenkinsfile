@@ -16,9 +16,9 @@ pipeline {
                 username = 'myusername'
             }
             steps {
-                echo  "${BUILD_ID}"'
-                echo   "${name}"'
-                echo  "${username}"'
+                echo  "${BUILD_ID}"
+                echo   "${name}"
+                echo  "${username}"
             }
         }
         stage('Parameters') {
