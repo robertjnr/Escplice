@@ -27,22 +27,31 @@ pipeline {
                
             }
         }
-       stage('Continue ?') {
+        stage('Continue ?') {
             input {
                 message "Should we continue?"
                 ok "Yes we Should"
             }
-        stage('Deploy'){
+            
             steps {
                 echo 'deploy on prod'
             }
         }
-      }
+        stage('Deploy on prod') {
+            steps {
+                echo 'deploy on prod'
+            }
+        }
+    }
     post{
         always { 
             echo 'I will always say Hello again!'
         }
-        
+        failure{
+            echo 'Failure'
+        }
+        success{
+            echo 'Successs'
+        }
     }
-}
 }
