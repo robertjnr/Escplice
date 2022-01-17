@@ -32,12 +32,12 @@ pipeline {
                 message "Should we continue?"
                 ok "Yes we Should"
             }
-            
+         stage('Deploy'){
             steps {
                 echo 'deploy on prod'
             }
         }
-       
+      }
     }
     post{
         always { 
