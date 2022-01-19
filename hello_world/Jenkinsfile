@@ -1,0 +1,25 @@
+pipeline{
+    agent none
+    tools{
+    maven "Maven"
+    stages{
+         stage('MavenComplile'){
+            agent any
+            steps{
+                bat 'mvn compile'
+            }
+        }
+        stage('MavenTest'){
+            agent any
+            steps{
+                bat 'mvn test'
+            }
+        }
+        stage('MavenPackage'){
+            agent any
+            steps{
+              bat 'mvn package'
+            }
+        }
+    }
+}
